@@ -16,6 +16,17 @@
               ],
               "layer": 30
             }
+          },
+          {
+            "tc_inventory_offhand@tc_inventory.offhand_render_grid": {
+              "anchor_from": "right_middle",
+              "anchor_to": "right_middle",
+              "offset": [
+                -88,
+                45
+              ],
+              "layer": 30
+            }
           }
         ]
       }

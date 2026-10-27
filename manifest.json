@@ -1,17 +1,17 @@
 {
   "format_version": 3,
   "header": {
-    "name": "Armor & item HUD + v1.1.24",
+    "name": "Armor & item HUD + v1.1.29",
     "description": "Armor durability HUD, item counters, effect timers and held-food hunger preview.",
     "uuid": "58852675-01f3-4945-856b-32238358ea27",
-    "version": "1.1.24",
+    "version": "1.1.29",
     "min_engine_version": "1.26.50"
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "2b96dc7f-50ed-47cb-a5c4-00ae9422f3e2",
-      "version": "1.1.24"
+      "version": "1.1.29"
     }
   ],
   "metadata": {

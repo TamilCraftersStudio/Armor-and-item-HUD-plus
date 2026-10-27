@@ -51,6 +51,33 @@
       }
     ]
   },
+  "offhand_render_grid": {
+    "type": "grid",
+    "collection_name": "offhand_items",
+    "$armor_collection_name": "offhand_items",
+    "$item_count_visible": false,
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "grid_dimensions": [
+      1,
+      1
+    ],
+    "size": [
+      18,
+      18
+    ],
+    "layer": 1,
+    "controls": [
+      {
+        "shield_grid_item@tc_inventory.armor_renderer_image": {
+          "grid_position": [
+            0,
+            0
+          ]
+        }
+      }
+    ]
+  },
   "armor_renderer_image": {
     "type": "panel",
     "size": [

@@ -14,6 +14,15 @@
               ],
               "layer": 20
             }
+          },
+          {
+            "tc_inventory_offhand@tc_inventory.offhand_render_grid": {
+              "offset": [
+                44,
+                -37
+              ],
+              "layer": 20
+            }
           }
         ]
       }
