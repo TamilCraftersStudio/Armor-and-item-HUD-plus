@@ -1,0 +1,9 @@
+{
+  "ui_defs": [
+    "ui/tc_mainhand.json",
+    "ui/tc_inventory.json",
+    "ui/.idk.json",
+    "ui/tcfx_effects.json",
+    "ui/tc_food.json"
+  ]
+}

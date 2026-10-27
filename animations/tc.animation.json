@@ -1,0 +1,383 @@
+// TamilCrafters Armor Durability + Item Counter BETA
+{
+ "format_version": "1.8.0",
+ "animations": {
+  "animation.tc.projection": {
+   "loop": true,
+   "bones": {
+    "tc_anchor": {
+     "position": [
+      0,
+      "15000 + ((q.is_crawling || q.is_swimming) ? -20 : 0)",
+      0
+     ],
+     "scale": 0.5
+    },
+    "tc_i0_l": {
+     "position": [
+      "(v.tc_horiz * 0.0)",
+      "(v.tc_horiz * -46.9333)",
+      0
+     ]
+    },
+    "tc_i0_r": {
+     "position": [
+      "(v.tc_horiz * 0.0)",
+      "(v.tc_horiz * -46.9333)",
+      0
+     ]
+    },
+    "tc_d0_h": {
+     "position": [
+      "(v.tc_horiz * -67.5333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_m0_h": {
+     "position": [
+      "(v.tc_horiz * -69.9333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_d0_t": {
+     "position": [
+      "(v.tc_horiz * -67.5333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_m0_t": {
+     "position": [
+      "(v.tc_horiz * -69.9333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_d0_u": {
+     "position": [
+      "(v.tc_horiz * -67.5333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_m0_u": {
+     "position": [
+      "(v.tc_horiz * -69.9333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_slash0": {
+     "position": [
+      "(v.tc_horiz * -69.9333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_percent0": {
+     "position": [
+      "(v.tc_horiz * -69.9333)",
+      "(v.tc_horiz * -14.8)",
+      0
+     ]
+    },
+    "tc_bart0": {
+     "position": [
+      "(v.tc_horiz * 0.0)",
+      "(v.tc_horiz * -46.9333)",
+      0
+     ]
+    },
+    "tc_barf0": {
+     "position": [
+      "(v.tc_horiz * 0.0)",
+      "(v.tc_horiz * -46.9333)",
+      0
+     ]
+    },
+    "tc_i1_l": {
+     "position": [
+      "(v.tc_horiz * 96.0)",
+      "(v.tc_horiz * -0.0)",
+      0
+     ]
+    },
+    "tc_i1_r": {
+     "position": [
+      "(v.tc_horiz * 96.0)",
+      "(v.tc_horiz * -0.0)",
+      0
+     ]
+    },
+    "tc_d1_h": {
+     "position": [
+      "(v.tc_horiz * 28.4667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_m1_h": {
+     "position": [
+      "(v.tc_horiz * 26.0667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_d1_t": {
+     "position": [
+      "(v.tc_horiz * 28.4667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_m1_t": {
+     "position": [
+      "(v.tc_horiz * 26.0667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_d1_u": {
+     "position": [
+      "(v.tc_horiz * 28.4667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_m1_u": {
+     "position": [
+      "(v.tc_horiz * 26.0667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_slash1": {
+     "position": [
+      "(v.tc_horiz * 26.0667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_percent1": {
+     "position": [
+      "(v.tc_horiz * 26.0667)",
+      "(v.tc_horiz * 32.1333)",
+      0
+     ]
+    },
+    "tc_bart1": {
+     "position": [
+      "(v.tc_horiz * 96.0)",
+      "(v.tc_horiz * 0.0)",
+      0
+     ]
+    },
+    "tc_barf1": {
+     "position": [
+      "(v.tc_horiz * 96.0)",
+      "(v.tc_horiz * 0.0)",
+      0
+     ]
+    },
+    "tc_i2_l": {
+     "position": [
+      "(v.tc_horiz * 192.0)",
+      "(v.tc_horiz * 46.9333)",
+      0
+     ]
+    },
+    "tc_i2_r": {
+     "position": [
+      "(v.tc_horiz * 192.0)",
+      "(v.tc_horiz * 46.9333)",
+      0
+     ]
+    },
+    "tc_d2_h": {
+     "position": [
+      "(v.tc_horiz * 124.4667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_m2_h": {
+     "position": [
+      "(v.tc_horiz * 122.0667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_d2_t": {
+     "position": [
+      "(v.tc_horiz * 124.4667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_m2_t": {
+     "position": [
+      "(v.tc_horiz * 122.0667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_d2_u": {
+     "position": [
+      "(v.tc_horiz * 124.4667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_m2_u": {
+     "position": [
+      "(v.tc_horiz * 122.0667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_slash2": {
+     "position": [
+      "(v.tc_horiz * 122.0667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_percent2": {
+     "position": [
+      "(v.tc_horiz * 122.0667)",
+      "(v.tc_horiz * 79.0667)",
+      0
+     ]
+    },
+    "tc_bart2": {
+     "position": [
+      "(v.tc_horiz * 192.0)",
+      "(v.tc_horiz * 46.9333)",
+      0
+     ]
+    },
+    "tc_barf2": {
+     "position": [
+      "(v.tc_horiz * 192.0)",
+      "(v.tc_horiz * 46.9333)",
+      0
+     ]
+    },
+    "tc_i3_l": {
+     "position": [
+      "(v.tc_horiz * 288.0)",
+      "(v.tc_horiz * 93.8667)",
+      0
+     ]
+    },
+    "tc_i3_r": {
+     "position": [
+      "(v.tc_horiz * 288.0)",
+      "(v.tc_horiz * 93.8667)",
+      0
+     ]
+    },
+    "tc_d3_h": {
+     "position": [
+      "(v.tc_horiz * 220.4667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_m3_h": {
+     "position": [
+      "(v.tc_horiz * 218.0667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_d3_t": {
+     "position": [
+      "(v.tc_horiz * 220.4667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_m3_t": {
+     "position": [
+      "(v.tc_horiz * 218.0667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_d3_u": {
+     "position": [
+      "(v.tc_horiz * 220.4667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_m3_u": {
+     "position": [
+      "(v.tc_horiz * 218.0667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_slash3": {
+     "position": [
+      "(v.tc_horiz * 218.0667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_percent3": {
+     "position": [
+      "(v.tc_horiz * 218.0667)",
+      "(v.tc_horiz * 126.0)",
+      0
+     ]
+    },
+    "tc_bart3": {
+     "position": [
+      "(v.tc_horiz * 288.0)",
+      "(v.tc_horiz * 93.8667)",
+      0
+     ]
+    },
+    "tc_barf3": {
+     "position": [
+      "(v.tc_horiz * 288.0)",
+      "(v.tc_horiz * 93.8667)",
+      0
+     ]
+    },
+    "tc_bg0": {
+     "position": [
+      "(v.tc_horiz * 0.0)",
+      "(v.tc_horiz * -46.9333)",
+      0
+     ]
+    },
+    "tc_bg1": {
+     "position": [
+      "(v.tc_horiz * 96.0)",
+      "(v.tc_horiz * 0.0)",
+      0
+     ]
+    },
+    "tc_bg2": {
+     "position": [
+      "(v.tc_horiz * 192.0)",
+      "(v.tc_horiz * 46.9333)",
+      0
+     ]
+    },
+    "tc_bg3": {
+     "position": [
+      "(v.tc_horiz * 288.0)",
+      "(v.tc_horiz * 93.8667)",
+      0
+     ]
+    }
+   }
+  }
+ }
+}

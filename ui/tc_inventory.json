@@ -1,0 +1,165 @@
+{
+  "namespace": "tc_inventory",
+  "armor_render_grid": {
+    "type": "grid",
+    "collection_name": "armor_items",
+    "$armor_collection_name": "armor_items",
+    "$item_count_visible": false,
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "grid_dimensions": [
+      1,
+      4
+    ],
+    "size": [
+      18,
+      72
+    ],
+    "layer": 1,
+    "controls": [
+      {
+        "head_grid_item@tc_inventory.armor_renderer_image": {
+          "grid_position": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "chest_grid_item@tc_inventory.armor_renderer_image": {
+          "grid_position": [
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "legs_grid_item@tc_inventory.armor_renderer_image": {
+          "grid_position": [
+            0,
+            2
+          ]
+        }
+      },
+      {
+        "feet_grid_item@tc_inventory.armor_renderer_image": {
+          "grid_position": [
+            0,
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "armor_renderer_image": {
+    "type": "panel",
+    "size": [
+      80,
+      18
+    ],
+    "controls": [
+      {
+        "armor_renderer@tc_inventory.armor_renderer": {
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#item_durability_current_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$armor_collection_name"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#item_durability_current_amount = 0))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+  "armor_renderer": {
+    "type": "custom",
+    "renderer": "inventory_item_renderer",
+    "size": [
+      18,
+      18
+    ],
+    "layer": 1,
+    "controls": [
+      {
+        "@tc_inventory.armor_durability_panel": {
+          "anchor_from": "right_middle",
+          "anchor_to": "left_middle",
+          "offset": [
+            1,
+            0
+          ],
+          "layer": 1
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$armor_collection_name"
+      },
+      {
+        "binding_name": "#item_id_aux",
+        "binding_type": "collection",
+        "binding_collection_name": "$armor_collection_name"
+      }
+    ]
+  },
+  "armor_durability_panel": {
+    "type": "panel",
+    "size": [
+      "100%c",
+      "100%cm"
+    ],
+    "$armor_collection_name|default": "armor_items",
+    "controls": [
+      {
+        "0@tc_inventory.armor_durability_label": {}
+      }
+    ]
+  },
+  "armor_durability_label": {
+    "type": "label",
+    "text": "#armor_durability",
+    "color": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "bindings": [
+      {
+        "binding_name": "#item_durability_total_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$armor_collection_name"
+      },
+      {
+        "binding_name": "#item_durability_current_amount",
+        "binding_type": "collection",
+        "binding_collection_name": "$armor_collection_name"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(((#current_armor_durability > #item_durability_current_amount) * -1 + 1) * ((#current_armor_durability < #item_durability_current_amount) + #current_armor_durability))",
+        "target_property_name": "#current_armor_durability"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(((#total_armor_durability > #item_durability_total_amount) * -1 + 1) * ((#total_armor_durability < #item_durability_total_amount) + #total_armor_durability))",
+        "target_property_name": "#total_armor_durability"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§f§r' + #current_armor_durability + '/' + #total_armor_durability)",
+        "target_property_name": "#armor_durability"
+      }
+    ],
+    "shadow": true,
+    "localize": false
+  }
+}

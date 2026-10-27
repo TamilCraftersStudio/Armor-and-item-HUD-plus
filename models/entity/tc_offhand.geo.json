@@ -1,0 +1,161 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.tc.offhand",
+        "texture_width": 16,
+        "texture_height": 16
+      },
+      "bones": [
+        {
+          "name": "tc_offhand_anchor",
+          "pivot": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "name": "tc_offhand_plane",
+          "parent": "tc_offhand_anchor",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -17.066666666666666,
+                -9.066666666666666,
+                0
+              ],
+              "size": [
+                34.13333333333333,
+                34.13333333333333,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tc.offhand_shield",
+        "texture_width": 64,
+        "texture_height": 64
+      },
+      "bones": [
+        {
+          "name": "tc_offhand_anchor",
+          "pivot": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "name": "tc_offhand_plane",
+          "parent": "tc_offhand_anchor",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -9.30909090909091,
+                -9.066666666666666,
+                0
+              ],
+              "size": [
+                18.61818181818182,
+                34.13333333333333,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    1,
+                    1
+                  ],
+                  "uv_size": [
+                    12,
+                    22
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.tc.offhand_background",
+        "texture_width": 20,
+        "texture_height": 22
+      },
+      "bones": [
+        {
+          "name": "tc_offhand_anchor",
+          "pivot": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "name": "tc_offhand_plane",
+          "parent": "tc_offhand_anchor",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -21.333333333333332,
+                -15.466666666666665,
+                0.1
+              ],
+              "size": [
+                42.666666666666664,
+                46.93333333333333,
+                0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    20,
+                    22
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

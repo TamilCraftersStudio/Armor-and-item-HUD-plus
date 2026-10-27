@@ -1,0 +1,19 @@
+// TamilCrafters Studio original HUD extension | v0.0.35
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tc.mainhand_projection": {
+      "loop": true,
+      "bones": {
+        "tc_mainhand_anchor": {
+          "position": [
+            0,
+            "20000 + ((q.is_crawling || q.is_swimming) ? -20 : 0)",
+            0
+          ],
+          "scale": 0.5
+        }
+      }
+    }
+  }
+}

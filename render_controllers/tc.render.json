@@ -1,0 +1,1402 @@
+// TamilCrafters Armor Durability + Item Counter BETA
+{
+ "format_version": "1.10.0",
+ "render_controllers": {
+  "controller.render.tc.icon0": {
+   "arrays": {
+    "textures": {
+     "array.tc_icons0": [
+      "Texture.tc_h_empty",
+      "Texture.tc_h_leather",
+      "Texture.tc_h_chain",
+      "Texture.tc_h_iron",
+      "Texture.tc_h_gold",
+      "Texture.tc_h_diamond",
+      "Texture.tc_h_netherite",
+      "Texture.tc_h_turtle",
+      "Texture.tc_h_elytra",
+      "Texture.tc_h_copper"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "v.tc_mat0 == 1 ? Material.tc_leather : Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_icons0[v.tc_mat0]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_i0_l": "v.tc_mat0 > 0"
+    },
+    {
+     "tc_i0_r": "v.tc_mat0 > 0"
+    }
+   ],
+   "color": {
+    "r": "v.tc_mat0 == 1 ? 0.62745098 : 1.0",
+    "g": "v.tc_mat0 == 1 ? 0.39607843 : 1.0",
+    "b": "v.tc_mat0 == 1 ? 0.25098039 : 1.0",
+    "a": 1.0
+   }
+  },
+  "controller.render.tc.d0_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p0_h : v.tc_d0_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d0_h": "(v.tc_mat0 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct0 : v.tc_numrem0) >= 100)"
+    }
+   ]
+  },
+  "controller.render.tc.d0_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p0_t : v.tc_d0_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d0_t": "(v.tc_mat0 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct0 : v.tc_numrem0) >= 10)"
+    }
+   ]
+  },
+  "controller.render.tc.d0_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p0_u : v.tc_d0_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d0_u": "(v.tc_mat0 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3)"
+    }
+   ]
+  },
+  "controller.render.tc.icon1": {
+   "arrays": {
+    "textures": {
+     "array.tc_icons1": [
+      "Texture.tc_c_empty",
+      "Texture.tc_c_leather",
+      "Texture.tc_c_chain",
+      "Texture.tc_c_iron",
+      "Texture.tc_c_gold",
+      "Texture.tc_c_diamond",
+      "Texture.tc_c_netherite",
+      "Texture.tc_c_turtle",
+      "Texture.tc_c_elytra",
+      "Texture.tc_c_copper"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "v.tc_mat1 == 1 ? Material.tc_leather : Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_icons1[v.tc_mat1]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_i1_l": "v.tc_mat1 > 0"
+    },
+    {
+     "tc_i1_r": "v.tc_mat1 > 0"
+    }
+   ],
+   "color": {
+    "r": "v.tc_mat1 == 1 ? 0.62745098 : 1.0",
+    "g": "v.tc_mat1 == 1 ? 0.39607843 : 1.0",
+    "b": "v.tc_mat1 == 1 ? 0.25098039 : 1.0",
+    "a": 1.0
+   }
+  },
+  "controller.render.tc.d1_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p1_h : v.tc_d1_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d1_h": "(v.tc_mat1 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct1 : v.tc_numrem1) >= 100)"
+    }
+   ]
+  },
+  "controller.render.tc.d1_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p1_t : v.tc_d1_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d1_t": "(v.tc_mat1 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct1 : v.tc_numrem1) >= 10)"
+    }
+   ]
+  },
+  "controller.render.tc.d1_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p1_u : v.tc_d1_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d1_u": "(v.tc_mat1 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3)"
+    }
+   ]
+  },
+  "controller.render.tc.icon2": {
+   "arrays": {
+    "textures": {
+     "array.tc_icons2": [
+      "Texture.tc_l_empty",
+      "Texture.tc_l_leather",
+      "Texture.tc_l_chain",
+      "Texture.tc_l_iron",
+      "Texture.tc_l_gold",
+      "Texture.tc_l_diamond",
+      "Texture.tc_l_netherite",
+      "Texture.tc_l_turtle",
+      "Texture.tc_l_elytra",
+      "Texture.tc_l_copper"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "v.tc_mat2 == 1 ? Material.tc_leather : Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_icons2[v.tc_mat2]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_i2_l": "v.tc_mat2 > 0"
+    },
+    {
+     "tc_i2_r": "v.tc_mat2 > 0"
+    }
+   ],
+   "color": {
+    "r": "v.tc_mat2 == 1 ? 0.62745098 : 1.0",
+    "g": "v.tc_mat2 == 1 ? 0.39607843 : 1.0",
+    "b": "v.tc_mat2 == 1 ? 0.25098039 : 1.0",
+    "a": 1.0
+   }
+  },
+  "controller.render.tc.d2_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p2_h : v.tc_d2_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d2_h": "(v.tc_mat2 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct2 : v.tc_numrem2) >= 100)"
+    }
+   ]
+  },
+  "controller.render.tc.d2_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p2_t : v.tc_d2_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d2_t": "(v.tc_mat2 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct2 : v.tc_numrem2) >= 10)"
+    }
+   ]
+  },
+  "controller.render.tc.d2_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p2_u : v.tc_d2_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d2_u": "(v.tc_mat2 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3)"
+    }
+   ]
+  },
+  "controller.render.tc.icon3": {
+   "arrays": {
+    "textures": {
+     "array.tc_icons3": [
+      "Texture.tc_b_empty",
+      "Texture.tc_b_leather",
+      "Texture.tc_b_chain",
+      "Texture.tc_b_iron",
+      "Texture.tc_b_gold",
+      "Texture.tc_b_diamond",
+      "Texture.tc_b_netherite",
+      "Texture.tc_b_turtle",
+      "Texture.tc_b_elytra",
+      "Texture.tc_b_copper"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "v.tc_mat3 == 1 ? Material.tc_leather : Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_icons3[v.tc_mat3]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_i3_l": "v.tc_mat3 > 0"
+    },
+    {
+     "tc_i3_r": "v.tc_mat3 > 0"
+    }
+   ],
+   "color": {
+    "r": "v.tc_mat3 == 1 ? 0.62745098 : 1.0",
+    "g": "v.tc_mat3 == 1 ? 0.39607843 : 1.0",
+    "b": "v.tc_mat3 == 1 ? 0.25098039 : 1.0",
+    "a": 1.0
+   }
+  },
+  "controller.render.tc.d3_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p3_h : v.tc_d3_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d3_h": "(v.tc_mat3 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct3 : v.tc_numrem3) >= 100)"
+    }
+   ]
+  },
+  "controller.render.tc.d3_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p3_t : v.tc_d3_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d3_t": "(v.tc_mat3 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3) && ((v.tc_mode == 2 ? v.tc_numpct3 : v.tc_numrem3) >= 10)"
+    }
+   ]
+  },
+  "controller.render.tc.d3_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_mode == 2 ? v.tc_p3_u : v.tc_d3_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_d3_u": "(v.tc_mat3 > 0) && (v.tc_mode != 1) && (v.tc_mode != 3)"
+    }
+   ]
+  },
+  "controller.render.tc.m0_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m0_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m0_h": "((v.tc_mat0 > 0) && (v.tc_nummax0 >= 100)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m0_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m0_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m0_t": "((v.tc_mat0 > 0) && (v.tc_nummax0 >= 10)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m0_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m0_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m0_u": "((v.tc_mat0 > 0)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.slash0": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_slash"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_slash0": "(v.tc_mat0 > 0) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m1_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m1_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m1_h": "((v.tc_mat1 > 0) && (v.tc_nummax1 >= 100)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m1_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m1_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m1_t": "((v.tc_mat1 > 0) && (v.tc_nummax1 >= 10)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m1_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m1_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m1_u": "((v.tc_mat1 > 0)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.slash1": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_slash"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_slash1": "(v.tc_mat1 > 0) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m2_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m2_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m2_h": "((v.tc_mat2 > 0) && (v.tc_nummax2 >= 100)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m2_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m2_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m2_t": "((v.tc_mat2 > 0) && (v.tc_nummax2 >= 10)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m2_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m2_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m2_u": "((v.tc_mat2 > 0)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.slash2": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_slash"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_slash2": "(v.tc_mat2 > 0) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m3_h": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m3_h]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m3_h": "((v.tc_mat3 > 0) && (v.tc_nummax3 >= 100)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m3_t": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m3_t]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m3_t": "((v.tc_mat3 > 0) && (v.tc_nummax3 >= 10)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.m3_u": {
+   "arrays": {
+    "textures": {
+     "array.tc_digits": [
+      "Texture.tc_d0",
+      "Texture.tc_d1",
+      "Texture.tc_d2",
+      "Texture.tc_d3",
+      "Texture.tc_d4",
+      "Texture.tc_d5",
+      "Texture.tc_d6",
+      "Texture.tc_d7",
+      "Texture.tc_d8",
+      "Texture.tc_d9"
+     ]
+    }
+   },
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_digits[v.tc_m3_u]"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_m3_u": "((v.tc_mat3 > 0)) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.slash3": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_slash"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_slash3": "(v.tc_mat3 > 0) && (v.tc_mode == 0)"
+    }
+   ]
+  },
+  "controller.render.tc.percent0": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_percent"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_percent0": "(v.tc_mat0 > 0) && (v.tc_mode == 2)"
+    }
+   ]
+  },
+  "controller.render.tc.percent1": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_percent"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_percent1": "(v.tc_mat1 > 0) && (v.tc_mode == 2)"
+    }
+   ]
+  },
+  "controller.render.tc.percent2": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_percent"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_percent2": "(v.tc_mat2 > 0) && (v.tc_mode == 2)"
+    }
+   ]
+  },
+  "controller.render.tc.percent3": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_percent"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_percent3": "(v.tc_mat3 > 0) && (v.tc_mode == 2)"
+    }
+   ]
+  },
+  "controller.render.tc.bart0": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_bar_track"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_bart0": "(v.tc_mat0 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.barf0": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_barfill[v.tc_barfr0]"
+   ],
+   "arrays": {
+    "textures": {
+     "array.tc_barfill": [
+      "Texture.tc_bar_f00",
+      "Texture.tc_bar_f01",
+      "Texture.tc_bar_f02",
+      "Texture.tc_bar_f03",
+      "Texture.tc_bar_f04",
+      "Texture.tc_bar_f05",
+      "Texture.tc_bar_f06",
+      "Texture.tc_bar_f07",
+      "Texture.tc_bar_f08",
+      "Texture.tc_bar_f09",
+      "Texture.tc_bar_f10",
+      "Texture.tc_bar_f11",
+      "Texture.tc_bar_f12"
+     ]
+    }
+   },
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_barf0": "(v.tc_mat0 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.bart1": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_bar_track"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_bart1": "(v.tc_mat1 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.barf1": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_barfill[v.tc_barfr1]"
+   ],
+   "arrays": {
+    "textures": {
+     "array.tc_barfill": [
+      "Texture.tc_bar_f00",
+      "Texture.tc_bar_f01",
+      "Texture.tc_bar_f02",
+      "Texture.tc_bar_f03",
+      "Texture.tc_bar_f04",
+      "Texture.tc_bar_f05",
+      "Texture.tc_bar_f06",
+      "Texture.tc_bar_f07",
+      "Texture.tc_bar_f08",
+      "Texture.tc_bar_f09",
+      "Texture.tc_bar_f10",
+      "Texture.tc_bar_f11",
+      "Texture.tc_bar_f12"
+     ]
+    }
+   },
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_barf1": "(v.tc_mat1 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.bart2": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_bar_track"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_bart2": "(v.tc_mat2 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.barf2": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_barfill[v.tc_barfr2]"
+   ],
+   "arrays": {
+    "textures": {
+     "array.tc_barfill": [
+      "Texture.tc_bar_f00",
+      "Texture.tc_bar_f01",
+      "Texture.tc_bar_f02",
+      "Texture.tc_bar_f03",
+      "Texture.tc_bar_f04",
+      "Texture.tc_bar_f05",
+      "Texture.tc_bar_f06",
+      "Texture.tc_bar_f07",
+      "Texture.tc_bar_f08",
+      "Texture.tc_bar_f09",
+      "Texture.tc_bar_f10",
+      "Texture.tc_bar_f11",
+      "Texture.tc_bar_f12"
+     ]
+    }
+   },
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_barf2": "(v.tc_mat2 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.bart3": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "Texture.tc_bar_track"
+   ],
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_bart3": "(v.tc_mat3 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  },
+  "controller.render.tc.barf3": {
+   "geometry": "Geometry.tc",
+   "materials": [
+    {
+     "*": "Material.default"
+    }
+   ],
+   "textures": [
+    "array.tc_barfill[v.tc_barfr3]"
+   ],
+   "arrays": {
+    "textures": {
+     "array.tc_barfill": [
+      "Texture.tc_bar_f00",
+      "Texture.tc_bar_f01",
+      "Texture.tc_bar_f02",
+      "Texture.tc_bar_f03",
+      "Texture.tc_bar_f04",
+      "Texture.tc_bar_f05",
+      "Texture.tc_bar_f06",
+      "Texture.tc_bar_f07",
+      "Texture.tc_bar_f08",
+      "Texture.tc_bar_f09",
+      "Texture.tc_bar_f10",
+      "Texture.tc_bar_f11",
+      "Texture.tc_bar_f12"
+     ]
+    }
+   },
+   "part_visibility": [
+    {
+     "*": false
+    },
+    {
+     "tc_barf3": "(v.tc_mat3 > 0) && (v.tc_mode == 3)"
+    }
+   ]
+  }
+ }
+}

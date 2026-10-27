@@ -1,0 +1,73 @@
+
+//variables
+{
+// COUNTER ITEM IDS - the only place these numbers live.
+// Numeric runtime item IDs used by the arrow/potion/totem counters (compared against #item_id_aux / 65536).
+// Values proven correct on device as of BETA v0.0.85. If a future game update makes a counter read 0 or miss items,
+// recheck these three numbers first. arrow=303 counts all arrow types incl. tipped; potion=571 counts all potion types.
+"$tc_counter:id_arrow": 303,
+"$tc_counter:id_potion": 571,
+"$tc_counter:id_totem": 578,
+
+"$osf_item_counter:arrow_position":[150,-10],
+"$osf_item_counter:arrow_anchor_from": "bottom_middle",
+"$osf_item_counter:arrow_anchor_to": "bottom_middle",
+"$osf_item_counter:arrow_visible":true,
+
+"$osf_item_counter:pot_position":[-150,-10],
+"$osf_item_counter:pot_anchor_from": "bottom_middle",
+"$osf_item_counter:pot_anchor_to": "bottom_middle",
+"$osf_item_counter:pot_visible":true,
+
+"$osf_item_counter:totem_position":[0,-40],
+"$osf_item_counter:totem_anchor_from": "bottom_middle",
+"$osf_item_counter:totem_anchor_to": "bottom_middle",
+"$osf_item_counter:totem_visible":true,
+
+"$osf_item_counter:used_visible":true,
+
+"$osf_item_counter:debug_visible":false,
+// FOOD PREVIEW IDS - target game 1.26.52.3 (user-confirmed).
+// Grounded in Cloudburst 26.50 registry a8a4341d7763d6eb8547cff3ca46b4153d60163d.
+// Separate from device-proven counters above. Update these constants when game IDs change.
+"$tc_food:id_beetroot": 285,
+"$tc_food:id_dried_kelp": 270,
+"$tc_food:id_potato": 280,
+"$tc_food:id_pufferfish": 267,
+"$tc_food:id_tropical_fish": 266,
+"$tc_food:id_cookie": 271,
+"$tc_food:id_glow_berries": 883,
+"$tc_food:id_melon_slice": 272,
+"$tc_food:id_poisonous_potato": 282,
+"$tc_food:id_chicken": 275,
+"$tc_food:id_cod": 264,
+"$tc_food:id_mutton": 560,
+"$tc_food:id_salmon": 265,
+"$tc_food:id_spider_eye": 278,
+"$tc_food:id_sweet_berries": 287,
+"$tc_food:id_carrot": 279,
+"$tc_food:id_beef": 273,
+"$tc_food:id_porkchop": 262,
+"$tc_food:id_rabbit": 288,
+"$tc_food:id_apple": 882,
+"$tc_food:id_chorus_fruit": 568,
+"$tc_food:id_enchanted_golden_apple": 259,
+"$tc_food:id_golden_apple": 258,
+"$tc_food:id_rotten_flesh": 277,
+"$tc_food:id_baked_potato": 281,
+"$tc_food:id_bread": 261,
+"$tc_food:id_cooked_cod": 268,
+"$tc_food:id_cooked_rabbit": 289,
+"$tc_food:id_beetroot_soup": 286,
+"$tc_food:id_cooked_chicken": 276,
+"$tc_food:id_cooked_mutton": 561,
+"$tc_food:id_cooked_salmon": 269,
+"$tc_food:id_golden_carrot": 283,
+"$tc_food:id_honey_bottle": 604,
+"$tc_food:id_mushroom_stew": 260,
+"$tc_food:id_suspicious_stew": 602,
+"$tc_food:id_cooked_porkchop": 263,
+"$tc_food:id_pumpkin_pie": 284,
+"$tc_food:id_cooked_beef": 274,
+"$tc_food:id_rabbit_stew": 290
+}

@@ -1,0 +1,9 @@
+{
+  "namespace": "hs",
+  "hs":{
+    "$osf_item_counter:arrow_visible": true,
+    "$osf_item_counter:pot_visible": true,
+    "$osf_item_counter:totem_visible": true,
+    "$osf_item_counter:debug_visible": false
+  }
+}

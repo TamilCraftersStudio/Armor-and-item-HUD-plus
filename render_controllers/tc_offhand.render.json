@@ -1,0 +1,77 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tc.offhand": {
+      "arrays": {
+        "textures": {
+          "array.tc_offhand": [
+            "Texture.tc_off_arrow",
+            "Texture.tc_off_arrow",
+            "Texture.tc_off_totem",
+            "Texture.tc_off_firework",
+            "Texture.tc_off_nautilus",
+            "Texture.tc_off_map",
+            "Texture.tc_off_shield",
+            "Texture.tc_off_unknown"
+          ]
+        }
+      },
+      "geometry": "v.tc_off_type == 6 ? Geometry.tc_offhand_shield : Geometry.tc_offhand",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "array.tc_offhand[v.tc_off_type]"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "tc_offhand_plane": true
+        }
+      ],
+      "is_hurt_color": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0
+      }
+    },
+    "controller.render.tc.offhand_background": {
+      "geometry": "Geometry.tc_offhand_background",
+      "materials": [
+        {
+          "*": "Material.tc_slot_blend"
+        }
+      ],
+      "textures": [
+        "Texture.tc_slot_background"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "tc_offhand_plane": true
+        }
+      ],
+      "ignore_lighting": true,
+      "light_color_multiplier": 1.0,
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "is_hurt_color": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0
+      }
+    }
+  }
+}

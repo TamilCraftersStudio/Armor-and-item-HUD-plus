@@ -1,0 +1,28 @@
+{
+  "mob_effect_screen@common.base_screen": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.mobeffects",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      }
+    ],
+    "$screen_content": "tcfx_effects.main_screen",
+    "$screen_bg_content": "tcfx_effects.close_hit",
+    "$screen_background_alpha": 0,
+    "$screen_animations": [],
+    "$background_animations": [],
+    "absorbs_input": false,
+    "is_showing_menu": false,
+    "force_render_below": true,
+    "render_game_behind": true,
+    "close_on_player_hurt": false,
+    "always_accepts_input": true,
+    "is_modal": false
+  }
+}

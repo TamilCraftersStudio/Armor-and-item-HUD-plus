@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tc.mainhand_background": {
+      "geometry": "Geometry.tc_mainhand_background",
+      "materials": [
+        {
+          "*": "Material.tc_slot_blend"
+        }
+      ],
+      "textures": [
+        "Texture.tc_slot_background"
+      ],
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "tc_mainhand_plane": true
+        }
+      ],
+      "ignore_lighting": true,
+      "light_color_multiplier": 1.0,
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "is_hurt_color": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0
+      }
+    }
+  }
+}
